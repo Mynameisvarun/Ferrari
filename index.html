@@ -25,8 +25,8 @@
         </div>
         <nav>
                 <a href="#Home">Home</a>      
-                <a href="Cars">Cars</a>          
-                <a href="Gallery">Gallery</a>     
+                <a href="#Cars">Cars</a>          
+                <a href="#Gallery">Gallery</a>     
                 <a href="#Blogs">Blogs</a>
                 <a href="#About">About Us</a>
         </nav>
@@ -37,7 +37,7 @@
         <div class="content">
             <h1>Ferrari</h1>
             <h3><span>Sports Cars</span></h3>
-            <div class="word"></div>
+            <div class="word">Ferrari: It's not a car, it's a feeling.</div>
         </div>
 
         <button class="btn">Get Started
@@ -58,58 +58,9 @@
     </div>
 
     <div class="image"> 
-        <img src="car.gif" alt="">
+        <img src="race-car-77.gif" alt="">
     </div>
+
+    
 </body>
-
-<script>
-    var words = [`Ferrari: It's not a car, it's a feeling.`,'Less talk, more drive.', 'The best is yet to come.'],
-    part,
-    i = 0,
-    offset = 0,
-    len = words.length,
-    forwards = true,
-    skip_count = 0,
-    skip_delay = 15,
-    speed = 45;
-var wordflick = function () {
-  setInterval(function () {
-    if (forwards) {
-      if (offset >= words[i].length) {
-        ++skip_count;
-        if (skip_count == skip_delay) {
-          forwards = false;
-          skip_count = 0;
-        }
-      }
-    }
-    else {
-      if (offset == 0) {
-        forwards = true;
-        i++;
-        offset = 0;
-        if (i >= len) {
-          i = 0;
-        }
-      }
-    }
-    part = words[i].substr(0, offset);
-    if (skip_count == 0) {
-      if (forwards) {
-        offset++;
-      }
-      else {
-        offset--;
-      }
-    }
-    $('.word').text(part);
-  },speed);
-};
-
-$(document).ready(function () {
-  wordflick();
-});
-
-
-</script>
 </html>
